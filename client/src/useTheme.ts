@@ -3,9 +3,7 @@ import { useState, useEffect } from "react";
 type Theme = "light" | "dark" | "system";
 
 function getSystemTheme(): Exclude<Theme, "system"> {
-  return window.matchMedia("(prefers-color-scheme: dark)").matches
-    ? "dark"
-    : "light";
+  return window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
 }
 
 export function useTheme() {
@@ -22,8 +20,7 @@ export function useTheme() {
   useEffect(() => {
     localStorage.setItem("theme", theme);
 
-    document.documentElement.dataset.theme =
-      theme === "system" ? getSystemTheme() : theme;
+    document.documentElement.dataset.theme = theme === "system" ? getSystemTheme() : theme;
   }, [theme]);
 
   useEffect(() => {

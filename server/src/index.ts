@@ -4,9 +4,9 @@ import { fileURLToPath } from "node:url";
 
 const app = express();
 const port = 3000;
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename);
-const clientDistPath = path.resolve(__dirname, "../../client/dist");
+const currentFilename = fileURLToPath(import.meta.url);
+const currentDir = path.dirname(currentFilename);
+const clientDistPath = path.resolve(currentDir, "../../client/dist");
 
 app.get("/api/health", (_req, res) => {
   res.json({ ok: true });

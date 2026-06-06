@@ -4,7 +4,14 @@
   "scripts": {
     "dev": "tsx watch src/index.ts",
     "build": "tsc",
-    "start": "NODE_ENV=production node dist/index.js"
+    "start": "NODE_ENV=production node dist/index.js",
+    "lint": "oxlint",
+    "lint:fix": "oxlint --fix",
+    "fmt": "oxfmt",
+    "fmt:check": "oxfmt --check",
+    "typecheck": "tsc --noEmit",
+    "check": "pnpm fmt:check && pnpm lint && pnpm typecheck",
+    "fix": "pnpm fmt && pnpm lint:fix"
   },
   "dependencies": {
     "express": "catalog:"
@@ -12,6 +19,7 @@
   "devDependencies": {
     "@types/express": "catalog:",
     "@types/node": "catalog:",
+    "oxlint": "catalog:",
     "tsx": "catalog:",
     "typescript": "catalog:"
   }

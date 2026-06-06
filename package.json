@@ -1,10 +1,21 @@
 {
   "name": "bt-auth",
   "scripts": {
-    "dev": "pnpm --parallel --filter './client' --filter './server' dev",
+    "dev": "pnpm --parallel dev",
     "build": "pnpm -r build",
-    "start": "pnpm --filter './server' start"
+    "start": "pnpm --filter './server' start",
+    "lint": "pnpm -r lint",
+    "lint:fix": "pnpm -r lint:fix",
+    "fmt": "pnpm -r fmt",
+    "fmt:check": "pnpm -r fmt:check",
+    "typecheck": "pnpm -r typecheck",
+    "check": "pnpm -r check",
+    "fix": "pnpm -r fix"
   },
   "license": "MIT",
-  "packageManager": "pnpm@11.5.0+sha512.dbfcc4f81cf48597afd4bc391ffdf12c11f1a9fb83a395bfa6b0a2d9cc2fd8ffebafdb1ccbd529632153f793904c2615b7f09fe1a345473fd1c35845172a8eb1"
+  "packageManager": "pnpm@11.5.0+sha512.dbfcc4f81cf48597afd4bc391ffdf12c11f1a9fb83a395bfa6b0a2d9cc2fd8ffebafdb1ccbd529632153f793904c2615b7f09fe1a345473fd1c35845172a8eb1",
+  "devDependencies": {
+    "oxfmt": "catalog:",
+    "oxlint": "catalog:"
+  }
 }

@@ -13,13 +13,9 @@ export function HealthCheck() {
       const res = await fetch("/api/health");
       if (!res.ok) throw new Error(`HTTP ${res.status}`);
       const data: HealthResponse = await res.json();
-      setStatus(
-        data.ok ? "✅ Backend is healthy" : "⚠️ Backend responded but not ok",
-      );
+      setStatus(data.ok ? "✅ Backend is healthy" : "⚠️ Backend responded but not ok");
     } catch (err) {
-      setStatus(
-        `❌ Failed: ${err instanceof Error ? err.message : "unknown error"}`,
-      );
+      setStatus(`❌ Failed: ${err instanceof Error ? err.message : "unknown error"}`);
     } finally {
       setLoading(false);
     }
