@@ -26,11 +26,11 @@ export function HealthCheck() {
   }
 
   return (
-    <div>
-      <button onClick={checkHealth} disabled={loading}>
+    <>
+      <button className="btn" onClick={checkHealth} disabled={loading}>
         {loading ? "Checking..." : "Check backend"}
       </button>
       {status && <p>{status}</p>}
-    </div>
+    </>
   );
 }
