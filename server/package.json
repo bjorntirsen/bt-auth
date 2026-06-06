@@ -10,6 +10,8 @@
     "fmt": "oxfmt",
     "fmt:check": "oxfmt --check",
     "typecheck": "tsc --noEmit",
+    "test": "vitest run",
+    "test:watch": "vitest",
     "check": "pnpm fmt:check && pnpm lint && pnpm typecheck",
     "fix": "pnpm fmt && pnpm lint:fix"
   },
@@ -19,8 +21,11 @@
   "devDependencies": {
     "@types/express": "catalog:",
     "@types/node": "catalog:",
+    "@types/supertest": "catalog:",
     "oxlint": "catalog:",
+    "supertest": "catalog:",
     "tsx": "catalog:",
-    "typescript": "catalog:"
+    "typescript": "catalog:",
+    "vitest": "catalog:"
   }
 }

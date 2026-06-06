@@ -9,6 +9,8 @@
     "fmt": "pnpm -r fmt",
     "fmt:check": "pnpm -r fmt:check",
     "typecheck": "pnpm -r typecheck",
+    "test": "pnpm -r test",
+    "test:watch": "pnpm -r test:watch",
     "check": "pnpm -r check",
     "fix": "pnpm -r fix"
   },
