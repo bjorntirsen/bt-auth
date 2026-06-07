@@ -3,8 +3,8 @@
   "type": "module",
   "scripts": {
     "dev": "tsx watch src/index.ts",
-    "build": "tsc --p ./tsconfig.app.json",
-    "start": "NODE_ENV=production node dist/index.js",
+    "build": "tsdown",
+    "start": "NODE_ENV=production node dist/index.mjs",
     "lint": "oxlint",
     "lint:fix": "oxlint --fix",
     "fmt": "oxfmt",
@@ -24,6 +24,7 @@
     "@types/supertest": "catalog:",
     "oxlint": "catalog:",
     "supertest": "catalog:",
+    "tsdown": "catalog:",
     "tsx": "catalog:",
     "typescript": "catalog:",
     "vitest": "catalog:"
