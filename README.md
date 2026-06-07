@@ -23,7 +23,7 @@ Requirements:
 - [x] Add Vitest setup with initial test
 - [x] Add pre-commit hooks (lint-staged)
 - [x] Add CI workflow (lint, test, build)
-- [ ] Add deploy workflow
+- [x] Add deploy workflow
 - [ ] Add Docker Compose for local Postgres
 - [ ] Add DB connection + client setup
 - [ ] Add schema + migrations

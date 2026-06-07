@@ -22,6 +22,8 @@ RUN pnpm -r build
 
 # ---- Stage 2: runtime ----
 FROM node:24-slim AS runtime
+RUN apt-get update && apt-get install -y --no-install-recommends curl \
+    && rm -rf /var/lib/apt/lists/*
 ENV NODE_ENV=production
 ENV PNPM_HOME="/pnpm"
 ENV PATH="$PNPM_HOME:$PATH"
