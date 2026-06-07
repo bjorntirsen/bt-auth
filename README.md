@@ -21,7 +21,7 @@ Requirements:
 - [x] Clean up Vite boilerplate
 - [x] Add oxlint and oxfmt config
 - [x] Add Vitest setup with initial test
-- [ ] Add pre-commit hooks (lint-staged)
+- [x] Add pre-commit hooks (lint-staged)
 - [ ] Add CI workflow (lint, test, build)
 - [ ] Add deploy workflow
 - [ ] Add Docker Compose for local Postgres
