@@ -22,7 +22,7 @@ Requirements:
 - [x] Add oxlint and oxfmt config
 - [x] Add Vitest setup with initial test
 - [x] Add pre-commit hooks (lint-staged)
-- [ ] Add CI workflow (lint, test, build)
+- [x] Add CI workflow (lint, test, build)
 - [ ] Add deploy workflow
 - [ ] Add Docker Compose for local Postgres
 - [ ] Add DB connection + client setup
