@@ -3,5 +3,7 @@
   "extends": [
     "config:recommended",
     "workarounds:typesNodeVersioning"
-  ]
+  ],
+  "automerge": true,
+  "platformAutomerge": true,
 }
