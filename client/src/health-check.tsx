@@ -1,21 +1,46 @@
 import { useState } from "react";
 
-type HealthResponse = { ok: boolean };
+type DatabaseStatus = "healthy" | "unhealthy" | "not_configured";
+
+type HealthResponse = {
+  ok: boolean;
+  checks: {
+    database: DatabaseStatus;
+  };
+};
 
 export function HealthCheck() {
-  const [status, setStatus] = useState<string>("");
+  const [status, setStatus] = useState("");
   const [loading, setLoading] = useState(false);
 
   async function checkHealth() {
     setLoading(true);
     setStatus("");
+
     try {
-      const res = await fetch("/api/health");
-      if (!res.ok) throw new Error(`HTTP ${res.status}`);
-      const data: HealthResponse = await res.json();
-      setStatus(data.ok ? "✅ Backend is healthy" : "⚠️ Backend responded but not ok");
-    } catch (err) {
-      setStatus(`❌ Failed: ${err instanceof Error ? err.message : "unknown error"}`);
+      const response = await fetch("/api/health");
+
+      if (!response.ok) {
+        throw new Error(`HTTP ${response.status}`);
+      }
+
+      const data: HealthResponse = await response.json();
+
+      switch (data.checks.database) {
+        case "healthy":
+          setStatus("✅ Backend and database are healthy");
+          break;
+
+        case "not_configured":
+          setStatus("✅ Backend is healthy — database is not configured");
+          break;
+
+        case "unhealthy":
+          setStatus("⚠️ Backend is running, but the database is unavailable");
+          break;
+      }
+    } catch (error) {
+      setStatus(`❌ Failed: ${error instanceof Error ? error.message : "unknown error"}`);
     } finally {
       setLoading(false);
     }

@@ -1,18 +1,28 @@
 # bt-auth
 
 Auth project to learn from the ground up
+Deployed at: https://auth.bjorntirsen.se/
 
 ## QuickStart
 
 Requirements:
 
-- node
+- Node.js
 - pnpm
-- docker
+- Docker
 
-1. Clone project
-2. Run `pnpm i`
-3. Run `pnpm dev`
+1. Clone the project
+2. Run `pnpm install`
+3. Run `pnpm db:start`
+4. Copy `server/.env.example` to `server/.env` by running `cp server/.env.example server/.env` in the terminal.
+5. Run `pnpm dev`
+
+Useful database commands:
+
+- `pnpm db:psql` — open a PostgreSQL shell
+- `pnpm db:logs` — follow PostgreSQL logs
+- `pnpm db:stop` — stop PostgreSQL while preserving data
+- `pnpm db:reset` — delete the local database and start fresh
 
 ## Plan
 

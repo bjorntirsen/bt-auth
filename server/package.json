@@ -2,7 +2,7 @@
   "name": "server",
   "type": "module",
   "scripts": {
-    "dev": "tsx watch src/index.ts",
+    "dev": "tsx watch --env-file=.env src/index.ts",
     "build": "tsdown",
     "start": "NODE_ENV=production node dist/index.mjs",
     "lint": "oxlint",
@@ -16,12 +16,17 @@
     "fix": "pnpm fmt && pnpm lint:fix"
   },
   "dependencies": {
-    "express": "catalog:"
+    "drizzle-orm": "catalog:",
+    "express": "catalog:",
+    "pg": "catalog:",
+    "zod": "catalog:"
   },
   "devDependencies": {
     "@types/express": "catalog:",
     "@types/node": "catalog:",
+    "@types/pg": "catalog:",
     "@types/supertest": "catalog:",
+    "drizzle-kit": "catalog:",
     "oxlint": "catalog:",
     "supertest": "catalog:",
     "tsdown": "catalog:",
