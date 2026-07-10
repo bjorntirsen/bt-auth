@@ -20,7 +20,7 @@ export function HealthCheck() {
     try {
       const response = await fetch("/api/health");
 
-      if (!response.ok) {
+      if (!response.ok && response.status !== 503) {
         throw new Error(`HTTP ${response.status}`);
       }
 
@@ -38,6 +38,9 @@ export function HealthCheck() {
         case "unhealthy":
           setStatus("⚠️ Backend is running, but the database is unavailable");
           break;
+
+        default:
+          setStatus("⚠️ Backend returned an unknown database status");
       }
     } catch (error) {
       setStatus(`❌ Failed: ${error instanceof Error ? error.message : "unknown error"}`);

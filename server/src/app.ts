@@ -2,7 +2,7 @@ import express from "express";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 import { sql } from "drizzle-orm";
-import { db } from "./db/index.js";
+import { db } from "./db/index";
 
 const currentFilename = fileURLToPath(import.meta.url);
 const currentDir = path.dirname(currentFilename);
@@ -24,8 +24,6 @@ app.get("/api/health", async (_req, res) => {
   }
   try {
     await db.execute(sql`SELECT 1`);
-
-    console.log("Health check passed");
 
     res.json({
       ok: true,

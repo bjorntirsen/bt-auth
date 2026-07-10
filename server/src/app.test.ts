@@ -1,7 +1,9 @@
-import { describe, expect, it } from "vitest";
+import { describe, expect, it, vi } from "vitest";
 import request from "supertest";
 
-import { app } from "./app.js";
+vi.mock("./db/index", () => ({ db: undefined }));
+
+import { app } from "./app";
 
 describe("GET /api/health", () => {
   it("reports that the database is not configured", async () => {
