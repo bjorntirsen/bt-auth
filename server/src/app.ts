@@ -1,6 +1,8 @@
 import express from "express";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
+import { sql } from "drizzle-orm";
+import { db } from "./db/index";
 
 const currentFilename = fileURLToPath(import.meta.url);
 const currentDir = path.dirname(currentFilename);
@@ -8,8 +10,37 @@ const clientDistPath = path.resolve(currentDir, "../../client/dist");
 
 export const app = express();
 
-app.get("/api/health", (_req, res) => {
-  res.json({ ok: true });
+app.get("/api/health", async (_req, res) => {
+  if (!db) {
+    console.log("No db set up yet");
+    res.json({
+      ok: true,
+      checks: {
+        database: "not_configured",
+      },
+    });
+
+    return;
+  }
+  try {
+    await db.execute(sql`SELECT 1`);
+
+    res.json({
+      ok: true,
+      checks: {
+        database: "healthy",
+      },
+    });
+  } catch (error) {
+    console.error("Database health check failed", error);
+
+    res.status(503).json({
+      ok: false,
+      checks: {
+        database: "unhealthy",
+      },
+    });
+  }
 });
 
 app.use(
