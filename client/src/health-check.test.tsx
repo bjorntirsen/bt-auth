@@ -1,6 +1,7 @@
-import { describe, it, expect, vi, beforeEach } from "vitest";
+import { beforeEach, describe, expect, it, vi } from "vitest";
 import { render, screen } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
+
 import { HealthCheck } from "./health-check";
 
 beforeEach(() => {
@@ -10,15 +11,32 @@ beforeEach(() => {
 describe("HealthCheck", () => {
   it("renders the button", () => {
     render(<HealthCheck />);
+
     expect(screen.getByRole("button", { name: /check backend/i })).toBeInTheDocument();
   });
 
-  it("shows healthy status after a successful check", async () => {
+  it("shows that the database is not configured", async () => {
     vi.spyOn(globalThis, "fetch").mockResolvedValue(
-      new Response(JSON.stringify({ ok: true }), { status: 200 }),
+      new Response(
+        JSON.stringify({
+          ok: true,
+          checks: {
+            database: "not_configured",
+          },
+        }),
+        {
+          status: 200,
+          headers: {
+            "Content-Type": "application/json",
+          },
+        },
+      ),
     );
+
     render(<HealthCheck />);
+
     await userEvent.click(screen.getByRole("button", { name: /check backend/i }));
-    expect(await screen.findByText(/healthy/i)).toBeInTheDocument();
+
+    expect(await screen.findByText(/database is not configured/i)).toBeInTheDocument();
   });
 });
