@@ -3,7 +3,7 @@
 Auth project to learn from the ground up
 Deployed at: https://auth.bjorntirsen.se/
 
-## QuickStart
+## Quick Start
 
 Requirements:
 
@@ -11,11 +11,17 @@ Requirements:
 - pnpm
 - Docker
 
-1. Clone the project
-2. Run `pnpm install`
-3. Run `pnpm db:start`
-4. Copy `server/.env.example` to `server/.env` by running `cp server/.env.example server/.env` in the terminal.
-5. Run `pnpm dev`
+1. Start Docker.
+2. Clone the project
+3. Run `pnpm install`
+4. Copy `.env.example` to `.env`:
+
+```bash
+  cp .env.example .env
+```
+
+5. Run `pnpm db:start`
+6. Run `pnpm dev`
 
 Useful database commands:
 
@@ -34,10 +40,18 @@ Useful database commands:
 - [x] Add pre-commit hooks (lint-staged)
 - [x] Add CI workflow (lint, test, build)
 - [x] Add deploy workflow
-- [ ] Add Docker Compose for local Postgres
-- [ ] Add DB connection + client setup
-- [ ] Add schema + migrations
-- [ ] Wire DB into BFF
+
+- [x] Add Docker Compose for local Postgres
+- [x] Add Drizzle setup
+- [x] Add database health check
+
+- [ ] Define initial schema
+- [ ] Generate first migration
+- [ ] Provision production Postgres
+- [ ] Configure production environment
+- [ ] Run production migrations
+
+- [ ] Persist users
 
 ### V2 — OAuth2
 
