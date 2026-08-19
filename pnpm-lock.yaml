@@ -222,7 +222,7 @@ catalogs:
       version: 24.13.3
     '@types/pg':
       specifier: ^8.20.0
-      version: 8.21.0
+      version: 8.23.1
     '@types/react':
       specifier: ^19.2.14
       version: 19.2.18
@@ -357,7 +357,7 @@ importers:
     dependencies:
       drizzle-orm:
         specifier: 'catalog:'
-        version: 0.45.2(@types/pg@8.21.0)(pg@8.23.0)
+        version: 0.45.2(@types/pg@8.23.1)(pg@8.23.0)
       express:
         specifier: 'catalog:'
         version: 5.2.1
@@ -376,7 +376,7 @@ importers:
         version: 24.13.3
       '@types/pg':
         specifier: 'catalog:'
-        version: 8.21.0
+        version: 8.23.1
       '@types/supertest':
         specifier: 'catalog:'
         version: 7.2.1
@@ -1454,8 +1454,8 @@ packages:
   '@types/node@26.2.0':
     resolution: {integrity: sha512-5IviulTZeRNp2vAJ514cc/HUlY5nZ9fCbq9DMyC52BrhFZACo3nI0R7qBxhQmo/d27NFe96ur/b7Wwxklda+kg==}
 
-  '@types/pg@8.21.0':
-    resolution: {integrity: sha512-AYdtudzabjLZgVgRZmAnU8bAnVUXzuJX2IYHeSIiIHm68olD+LgQYCGWdtcNYnP0uq9c4S4NibVG3Ni7VbKW7Q==}
+  '@types/pg@8.23.1':
+    resolution: {integrity: sha512-fKVHpikPdg4GKks3JuLEhvwSyvwzF23hnabPy6DD8ljVbC7+6J5dQzdv4arV6jqq57djnMgs1HKBxX4P8aBI3A==}
 
   '@types/qs@6.15.1':
     resolution: {integrity: sha512-GZHUBZR9hckSUhrxmp1nG6NwdpM9fCunJwyThLW1X3AyHgd9IlHb6VANpQQqDr2o/qQp6McZ3y/IA2rVzKzSbw==}
@@ -3514,7 +3514,7 @@ snapshots:
     dependencies:
       undici-types: 8.3.0
 
-  '@types/pg@8.21.0':
+  '@types/pg@8.23.1':
     dependencies:
       '@types/node': 26.2.0
       pg-protocol: 1.16.0
@@ -3860,9 +3860,9 @@ snapshots:
       esbuild: 0.25.12
       tsx: 4.23.12
 
-  drizzle-orm@0.45.2(@types/pg@8.21.0)(pg@8.23.0):
+  drizzle-orm@0.45.2(@types/pg@8.23.1)(pg@8.23.0):
     optionalDependencies:
-      '@types/pg': 8.21.0
+      '@types/pg': 8.23.1
       pg: 8.23.0
 
   dts-resolver@3.0.0: {}
