@@ -247,7 +247,7 @@ catalogs:
       version: 4.1.10
     zod:
       specifier: ^4.4.3
-      version: 4.6.4
+      version: 4.6.5
 
 importers:
 
@@ -325,7 +325,7 @@ importers:
         version: 8.23.0
       zod:
         specifier: 'catalog:'
-        version: 4.6.4
+        version: 4.6.5
     devDependencies:
       '@types/express':
         specifier: 'catalog:'
@@ -2892,8 +2892,8 @@ packages:
   yuku-parser@0.9.3:
     resolution: {integrity: sha512-96wPoHnwaXfkZv7UIOUkDb+s7ZH8lv8Qtg+MxdvHUV1LFa5jV9iKOaams1942YQt+krFQrWiD6lSg2ermv5kHA==}
 
-  zod@4.6.4:
-    resolution: {integrity: sha512-AXSD6hvGdvRjajG/l1cC+d6IrhH+sjmPKtYeQdJIK8MFJl3LyClzS+o/YsVC+zQZPupAaeH5skwwm8YqYH7BqA==}
+  zod@4.6.5:
+    resolution: {integrity: sha512-v5l/aFXZQeai4awLbOpSoHecE9UiMrnfx75tEXLjNonXVARxQ5mOeipTjROUchszUNCqnE+hqAMujRsRHsut2Q==}
 
 snapshots:
 
@@ -4822,4 +4822,4 @@ snapshots:
       '@yuku-parser/binding-win32-arm64': 0.9.3
       '@yuku-parser/binding-win32-x64': 0.9.3
 
-  zod@4.6.4: {}
+  zod@4.6.5: {}
