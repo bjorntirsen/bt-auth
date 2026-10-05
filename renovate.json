@@ -1,9 +1,12 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
-  "extends": [
-    "config:recommended",
-    "workarounds:typesNodeVersioning"
-  ],
-  "automerge": true,
+  "extends": ["config:recommended", "workarounds:typesNodeVersioning", "group:allNonMajor"],
+  "minimumReleaseAge": "1 day",
   "platformAutomerge": true,
+  "packageRules": [
+    {
+      "matchUpdateTypes": ["minor", "patch"],
+      "automerge": true
+    }
+  ]
 }
