@@ -23,6 +23,10 @@ Requirements:
 5. Run `pnpm db:start`
 6. Run `pnpm dev`
 
+The auth server is optional for local development. It lives in
+[bt-auth-server](https://github.com/bjorntirsen/bt-auth-server) and runs on port 8080. When it is not
+running, the health check reports it as unavailable.
+
 Useful database commands:
 
 - `pnpm db:psql` — open a PostgreSQL shell
