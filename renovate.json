@@ -1,12 +1,11 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
-  "extends": ["config:recommended", "workarounds:typesNodeVersioning", "group:allNonMajor"],
-  "minimumReleaseAge": "1 day",
-  "platformAutomerge": true,
+  "extends": ["github>bjorntirsen/renovate-config"],
   "packageRules": [
     {
-      "matchUpdateTypes": ["minor", "patch"],
-      "automerge": true
+      "description": "Drizzle ORM and kit must move together (both 0.x, so never automerged)",
+      "matchPackageNames": ["drizzle-orm", "drizzle-kit"],
+      "groupName": "drizzle"
     }
   ]
 }
