@@ -36,3 +36,7 @@ catalog:
   zod: ^4.4.3
 
 catalogMode: strict
+
+# Explicit, so pnpm enforces it strictly (the built-in 1-day default silently
+# falls back to too-new versions when resolving).
+minimumReleaseAge: 1440
